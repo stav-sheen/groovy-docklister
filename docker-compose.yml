@@ -1,0 +1,29 @@
+version: "2"
+services:
+
+  flasker-web:
+    image: stavsheen/flasker
+    container_name: flask-app
+    networks:
+        groovy-docklister:
+            ipv4_address: 172.18.0.2
+    ports:
+      - "127.0.0.1:5000:5000"
+      
+  nginx-proxy:
+    image: stavsheen/nprox
+    container_name: proxy-app
+    networks:
+      - groovy-docklister
+    ports:
+      - "127.0.0.1:80:80"
+      
+networks:
+    groovy-docklister:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.18.0.0/24
+                gateway: 172.18.0.1
+
