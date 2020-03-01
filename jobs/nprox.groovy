@@ -1,5 +1,5 @@
-job('DockerBuildandPublishDSL') {
-    description('Build and Publish flask app image to dockerhub)
+iob('DockerBuildandPublishDSL') {
+    description('Build and Publish flask app image to dockerhub')
      scm {
         git {
         remote {
@@ -12,11 +12,11 @@ job('DockerBuildandPublishDSL') {
             branch('*/' + 'master')
         }
     }
-
     steps {
         dockerBuildAndPublish {
             repositoryName('stavsheen/nprox')
-            tag('${env.BUILD_ID}', 'latest')
+            tag('${env.BUILD_ID}')
+	    tag('latest')
             registryCredentials('${docker-Cred}')
             dockerfileDirectory('./nginx')
         }
