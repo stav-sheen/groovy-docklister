@@ -1,4 +1,4 @@
-job('DockerBuildandPublishDSL') {
+job('flasker-maker') {
     description('Build and Publish flask app image to dockerhub')
      scm {
         git {

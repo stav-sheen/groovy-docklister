@@ -1,5 +1,5 @@
-job('DockerBuildandPublishDSL') {
-    description('Build and Publish flask app image to dockerhub')
+job('nginx-proxy maker') {
+    description('Build and Publish nginx proxy image to dockerhub')
      scm {
         git {
         remote {
