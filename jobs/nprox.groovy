@@ -1,4 +1,4 @@
-iob('DockerBuildandPublishDSL') {
+job('DockerBuildandPublishDSL') {
     description('Build and Publish flask app image to dockerhub')
      scm {
         git {
