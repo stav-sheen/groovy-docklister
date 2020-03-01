@@ -18,7 +18,7 @@ job('DockerBuildandPublishDSL') {
             repositoryName('stavsheen/flasker')
             tag('${env.BUILD_ID}')
 	    tag('latest')
-            registryCredentials('')
+            registryCredentials('${docker-cred}')
             dockerfileDirectory('./flask-app')
         }
     }
